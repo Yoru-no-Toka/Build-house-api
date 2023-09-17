@@ -128,9 +128,19 @@
 `{
   "buildingTime": "30",
   "budget": "11500000",
-  "date": "2023-09-15",
   "designTime": "15",
   "square": "220"
+}`
+
+#### Пример ответа
+
+`{
+    "buildingTime": "30",
+    "budget": "11500000",
+    "designTime": "15",
+    "square": "220",
+    "_id": "6506b6a326f2f13f4c47ddd6",
+    "__v": 0
 }`
 
 ## Получение информации о проекте
@@ -145,14 +155,12 @@
   {
     "buildingTime": "30",
     "budget": "11500000",
-    "date": "2023-09-15"
     "designTime": "15-24-12"
     "square": "220"
   },
   {
     "buildingTime": "50",
     "budget": "22700000",
-    "date": "2023-04-27"
     "designTime": "16-13-21"
     "square": "420"
   }

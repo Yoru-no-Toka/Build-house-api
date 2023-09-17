@@ -163,7 +163,8 @@ router.post("/projects", async (req, res) => {
       square,
     });
     await project.save();
-    res.status(200);
+    console.log(project);
+    res.status(200).json(project);
   } catch (error) {
     res.status(500).json({
       error,
