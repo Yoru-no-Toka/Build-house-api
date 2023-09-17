@@ -55,12 +55,34 @@ const requestFormDateSchema = new mongoose.Schema({
   text: String,
 });
 
+const imageObjectSchema = new mongoose.Schema({
+  name: String,
+  data: Buffer,
+});
+
 const objectSchema = new mongoose.Schema({
-  image: String,
+  image: [imageObjectSchema],
   title: String,
   description: String,
+  completeDate: String,
+  status: Boolean,
 });
+
+const reviewSchema = new mongoose.Schema({
+  name: String,
+  data: Buffer,
+});
+
+const projectInfoSchema = new mongoose.Schema({
+  buildingTime: String,
+  budget: String,
+  designTime: String,
+  square: String,
+});
+
 const ObjectModel = mongoose.model("Object", objectSchema);
+
+const ProjectInfoModel = mongoose.model("ProjectInfo", projectInfoSchema);
 
 const requestFormModel = mongoose.model("Requests", requestFormSchema);
 
@@ -74,9 +96,13 @@ const requestFormFileModel = mongoose.model(
   requestFormFileSchema
 );
 
+const reviewModel = mongoose.model("Review", reviewSchema);
+
 export default {
   ObjectModel,
+  ProjectInfoModel,
   requestFormModel,
   requestFormDateModel,
   requestFormFileModel,
+  reviewModel,
 };

@@ -153,4 +153,22 @@ router.post("/reqs/date", async (req, res) => {
   }
 });
 
+router.post("/projects", async (req, res) => {
+  try {
+    const { buildingTime, budget, designTime, square } = req.body;
+    const project = new db.ProjectInfoModel({
+      buildingTime,
+      budget,
+      designTime,
+      square,
+    });
+    await project.save();
+    res.status(200);
+  } catch (error) {
+    res.status(500).json({
+      error,
+    });
+  }
+});
+
 export default router;

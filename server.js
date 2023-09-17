@@ -3,7 +3,7 @@ import dataRoutes from "./controllers/dataController.js";
 import requestRoutes from "./controllers/requestController.js";
 import db from "./db.js";
 const app = express();
-const PORT = process.env.PORT;
+const PORT = 3000;
 
 app.use(express.json());
 
@@ -13,4 +13,6 @@ app.use(dataRoutes);
 
 app.use(requestRoutes);
 
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log(`Сервер запущен на порту ${PORT}`);
+});
